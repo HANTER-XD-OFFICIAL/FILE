@@ -1,7 +1,7 @@
 import os
-import file_cark_enc
+import file_cark
 
 # মডিউল থেকে login ফাংশন কল করা
-file_cark_enc.login()
-#import file_cark_enc
+file_cark.login()
+#import file_cark
 print("Module imported successfully")
