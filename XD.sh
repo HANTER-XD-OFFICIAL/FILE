@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #pip install file_cark
-import file_cark
+#import file_cark
 import platform
 import os
 
