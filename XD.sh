@@ -1,19 +1,26 @@
-#!/usr/bin/env python3
-#pip install file_cark
-#import file_cark
+# BIT_32.py
+
+import ctypes
 import platform
-import os
 
-# আর্কিটেকচার চেক করা
-bit = platform.architecture()[0]
+# সিস্টেম আর্কিটেকচার চেক করা
+bit_arch = platform.architecture()[0]
+print(f"System architecture: {bit_arch}")
 
-if bit == '64bit':
-    print("64-bit")
-    # 64-বিট কোড এখানে থাকবে
-    os.system('python3 BIT_64.py')
-elif bit == '32bit':
-    print("32-bit")
-    # 32-বিট কোড এখানে থাকবে
-    os.system('python3 BIT_32.py')
+# যদি ৩২-বিট সিস্টেম হয়
+if bit_arch == '32bit':
+    print("Running on a 32-bit system.")
+    
+    # file_cark.cpython-311.so মডিউল লোড করা
+    try:
+        file_cark = ctypes.CDLL('./file_cark.cpython-311.so')
+        
+        # file_cark থেকে একটি ফাংশন কল করা (যদি ফাংশন থাকে)
+        # উদাহরণস্বরূপ, ধরো মডিউলে `login` নামে একটি ফাংশন আছে:
+        # file_cark.login()
+        
+        print("file_cark module loaded successfully.")
+    except Exception as e:
+        print(f"Error loading file_cark module: {e}")
 else:
-    print("অজানা সিস্টেম আর্কিটেকচার")
+    print("Not a 32-bit system.")
