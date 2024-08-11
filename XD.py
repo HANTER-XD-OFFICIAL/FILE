@@ -1,1 +1,1 @@
-improt FILE
+import FILE
